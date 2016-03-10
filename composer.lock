@@ -1,0 +1,432 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "760b5fbfbedc7fb68b3e4469a5f543bf",
+    "content-hash": "8923615fbc96b88823bf39a66ef715ab",
+    "packages": [
+        {
+            "name": "dnaber/string-theory",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnaber-de/string-theory.git",
+                "reference": "217b4bd035e7b42285901e0f383ee62e9ac74e27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnaber-de/string-theory/zipball/217b4bd035e7b42285901e0f383ee62e9ac74e27",
+                "reference": "217b4bd035e7b42285901e0f383ee62e9ac74e27",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "StringTheory\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Naber",
+                    "email": "kontakt@dnaber.de",
+                    "homepage": "https://dnaber.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Objective multi-byte string handling",
+            "keywords": [
+                "multi-byte",
+                "scanner",
+                "string",
+                "utf8"
+            ],
+            "time": "2016-03-05 15:29:55"
+        },
+        {
+            "name": "inpsyde/wp-db-types",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inpsyde/wp-db-types.git",
+                "reference": "b7c872828367c26c96172c9d840d112ab7e07dbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inpsyde/wp-db-types/zipball/b7c872828367c26c96172c9d840d112ab7e07dbe",
+                "reference": "b7c872828367c26c96172c9d840d112ab7e07dbe",
+                "shasum": ""
+            },
+            "require": {
+                "dnaber/string-theory": "dev-master",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpDbTypes\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Inpsyde GmbH",
+                    "role": "Company",
+                    "homepage": "http://inpsyde.com/"
+                },
+                {
+                    "name": "David Naber",
+                    "email": "kontakt@dnaber.de",
+                    "homepage": "https://dnaber.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides general purpose interfaces on working with databases, focused on WordPress development.",
+            "keywords": [
+                "Database",
+                "Type",
+                "WordPress",
+                "wpdb"
+            ],
+            "support": {
+                "source": "https://github.com/inpsyde/wp-db-types/tree/master",
+                "issues": "https://github.com/inpsyde/wp-db-types/issues"
+            },
+            "time": "2016-03-10 16:38:12"
+        },
+        {
+            "name": "inpsyde/wp-prepared-statements-converter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inpsyde/wp-prepared-statements-converter.git",
+                "reference": "ca1391c0425727df758dcc369a7ca608c2b75ee8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inpsyde/wp-prepared-statements-converter/zipball/ca1391c0425727df758dcc369a7ca608c2b75ee8",
+                "reference": "ca1391c0425727df758dcc369a7ca608c2b75ee8",
+                "shasum": ""
+            },
+            "require": {
+                "dnaber/string-theory": "dev-master",
+                "inpsyde/wp-db-types": "dev-master",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "inpsyde/monkery-test-case": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpPreparedStatementsConverter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Inpsyde GmbH",
+                    "role": "Company",
+                    "homepage": "http://inpsyde.com"
+                },
+                {
+                    "name": "David Naber",
+                    "email": "kontakt@dnaber.de",
+                    "homepage": "https://dnaber.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Converts wpdb prepared statement syntax in PDO and vice versa",
+            "support": {
+                "source": "https://github.com/inpsyde/wp-prepared-statements-converter/tree/master",
+                "issues": "https://github.com/inpsyde/wp-prepared-statements-converter/issues"
+            },
+            "time": "2016-03-10 16:53:54"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "antecedent/patchwork",
+            "version": "1.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antecedent/patchwork.git",
+                "reference": "908a233f8a374f02b02ff5e3d6ba687ca506d57d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/908a233f8a374f02b02ff5e3d6ba687ca506d57d",
+                "reference": "908a233f8a374f02b02ff5e3d6ba687ca506d57d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ignas Rudaitis",
+                    "email": "ignas.rudaitis@gmail.com"
+                }
+            ],
+            "description": "A pure PHP library that lets you redefine user-defined functions at runtime.",
+            "homepage": "http://antecedent.github.io/patchwork/",
+            "keywords": [
+                "aop",
+                "aspect",
+                "interception",
+                "monkeypatching",
+                "redefinition",
+                "runkit",
+                "testing"
+            ],
+            "time": "2015-10-09 18:20:06"
+        },
+        {
+            "name": "brain/monkey",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Brain-WP/BrainMonkey.git",
+                "reference": "1a523003c148a1c736010b75c34a4999a7ed64ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Brain-WP/BrainMonkey/zipball/1a523003c148a1c736010b75c34a4999a7ed64ec",
+                "reference": "1a523003c148a1c736010b75c34a4999a7ed64ec",
+                "shasum": ""
+            },
+            "require": {
+                "antecedent/patchwork": "1.3.*",
+                "mockery/mockery": "*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.3",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Brain\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giuseppe Mazzapica",
+                    "email": "giuseppe.mazzapica@gmail.com",
+                    "homepage": "http://gm.zoomlab.it",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mocking utility for PHP functions and WordPress plugin API",
+            "keywords": [
+                "Monkey Patching",
+                "interception",
+                "mock",
+                "mock functions",
+                "mockery",
+                "patchwork",
+                "redefinition",
+                "runkit",
+                "test",
+                "testing"
+            ],
+            "time": "2016-02-19 10:42:51"
+        },
+        {
+            "name": "hamcrest/hamcrest-php",
+            "version": "1.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hamcrest/hamcrest-php.git",
+                "reference": "b72949ccf2f640e7de66ff7dd92d83f577ce782e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/b72949ccf2f640e7de66ff7dd92d83f577ce782e",
+                "reference": "b72949ccf2f640e7de66ff7dd92d83f577ce782e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3|^7.0"
+            },
+            "replace": {
+                "cordoval/hamcrest-php": "*",
+                "davedevelopment/hamcrest-php": "*",
+                "kodova/hamcrest-php": "*"
+            },
+            "require-dev": {
+                "phpunit/php-file-iterator": "1.3.3",
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "hamcrest"
+                ],
+                "files": [
+                    "hamcrest/Hamcrest.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "This is the PHP port of Hamcrest Matchers",
+            "keywords": [
+                "test"
+            ],
+            "time": "2016-01-19 12:08:55"
+        },
+        {
+            "name": "inpsyde/monkery-test-case",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inpsyde/monkery-test-case.git",
+                "reference": "7addf56771739ab21624f24a1519eba5384bd002"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inpsyde/monkery-test-case/zipball/7addf56771739ab21624f24a1519eba5384bd002",
+                "reference": "7addf56771739ab21624f24a1519eba5384bd002",
+                "shasum": ""
+            },
+            "require": {
+                "brain/monkey": "~1.3",
+                "mockery/mockery": "~0.9",
+                "php": ">=5.4.0"
+            },
+            "suggest": {
+                "phpunit/phpunit": "Unit testing framework. Usually installed globally."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonkeryTestCase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Inpsyde GmbH",
+                    "homepage": "http://inpsyde.com",
+                    "role": "Company"
+                }
+            ],
+            "description": "Composition package of brain/monkey and mockery/mockery with a custom test case",
+            "time": "2016-03-10 16:32:13"
+        },
+        {
+            "name": "mockery/mockery",
+            "version": "0.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/mockery.git",
+                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/70bba85e4aabc9449626651f48b9018ede04f86b",
+                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b",
+                "shasum": ""
+            },
+            "require": {
+                "hamcrest/hamcrest-php": "~1.1",
+                "lib-pcre": ">=7.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mockery": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                },
+                {
+                    "name": "Dave Marshall",
+                    "email": "dave.marshall@atstsolutions.co.uk",
+                    "homepage": "http://davedevelopment.co.uk"
+                }
+            ],
+            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
+            "homepage": "http://github.com/padraic/mockery",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "library",
+                "mock",
+                "mock objects",
+                "mockery",
+                "stub",
+                "test",
+                "test double",
+                "testing"
+            ],
+            "time": "2015-04-02 19:54:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "inpsyde/wp-db-types": 20,
+        "inpsyde/wp-prepared-statements-converter": 20,
+        "inpsyde/monkery-test-case": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
