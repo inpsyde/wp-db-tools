@@ -3,7 +3,7 @@
 Solving repetitive tasks like _creating_, _deleting_, _copying_ and _altering: MySQL tables. Providing adapter 
 for `wpdb` as well as `PDO`.
 
-Work in progress!
+**Work in progress!**
 
 ## Usage examples
 
@@ -27,3 +27,9 @@ if ( ! $lookup->table_exists( 'wp_options_copy' ) )
 if ( ! $lookup->table_exists( 'wp_posts_copy' ) )
 	$copier->copy( 'wp_posts', 'wp_posts_copy' );
 ```
+
+## Roadmap
+
+ * Specify a bit-mask schema to unify options like `ARRAY_A` independent for the used DB adapter
+ * Specify a table schema
+ * Reflect the table schema in JSON format
