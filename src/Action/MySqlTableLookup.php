@@ -3,7 +3,8 @@
 namespace WpDbTools\Action;
 
 use
-	WpDbTools\Db;
+	WpDbTools\Db,
+	WpDbTypes\Type;
 
 /**
  * Class MySqlTableLookup
@@ -32,14 +33,30 @@ class MySqlTableLookup implements TableLookup {
 	 */
 	public function table_exists( $table ) {
 
-		$statement = $this->database
-			->prepare( "SHOW TABLES LIKE %s" );
+		$statement = new Type\ArbitraryStatement( "SHOW TABLES LIKE %s" );
 		$result = $this->database
 			->query_statement( $statement, [ $table ] );
 
 		if ( ! $result->valid() )
 			return FALSE;
 
-		return $result->contains( $table );
+		/**
+		 * @todo refactor this as soon as
+		 * we have unified options bit-mask implemented
+		 * to get results in single-level arrays
+		 *
+		 * return $result->contains( $table );
+		 */
+
+		$tables = [];
+		foreach ( $result as $row ) {
+			$tables = array_merge(
+				$tables,
+				array_values(
+					get_object_vars( $row )
+				)
+			);
+		}
+		return in_array( $table, $tables );
 	}
 }
