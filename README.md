@@ -17,10 +17,13 @@ use
 
 $adapter = new Db\WpDbAdapter( $GLOBALS[ 'wpdb' ] );
 $copier = new Action\MySqlTableCopier( $adapter );
+$lookup = new Action\MySqlTableLookup( $adapter );
 
 // copy table structure
-$copier->copy_structure( 'wp_options', 'wp_options_copy' );
+if ( ! $lookup->table_exists( 'wp_options_copy' ) )
+	$copier->copy_structure( 'wp_options', 'wp_options_copy' );
 
 // copy table and content
-$copier->copy( 'wp_posts', 'wp_posts_copy' );
+if ( ! $lookup->table_exists( 'wp_posts_copy' ) )
+	$copier->copy( 'wp_posts', 'wp_posts_copy' );
 ```
