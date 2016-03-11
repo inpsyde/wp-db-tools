@@ -26,7 +26,9 @@
     }
   },
   "require-dev": {
-    "inpsyde/monkery-test-case":"dev-master"
+    "inpsyde/monkery-test-case":"dev-master",
+    "inpsyde/wp-tests-starter": "^1.0",
+    "inpsyde/wordpress-dev": "^4.4"
   },
   "repositories": [
     {

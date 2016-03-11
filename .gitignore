@@ -1,3 +1,4 @@
 vendor/
 /local/
 phpunit.xml
+phpunit-integration.xml

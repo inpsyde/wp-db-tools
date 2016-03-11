@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "760b5fbfbedc7fb68b3e4469a5f543bf",
-    "content-hash": "8923615fbc96b88823bf39a66ef715ab",
+    "hash": "e0d5669fe7ed825077cf3ff38e1d529b",
+    "content-hash": "be8d352b7698c151ab1430e26b87ea01",
     "packages": [
         {
             "name": "dnaber/string-theory",
@@ -58,17 +58,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/inpsyde/wp-db-types.git",
-                "reference": "b7c872828367c26c96172c9d840d112ab7e07dbe"
+                "reference": "45bfdd910a49ff1dc96c25766f4668bd85386588"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inpsyde/wp-db-types/zipball/b7c872828367c26c96172c9d840d112ab7e07dbe",
-                "reference": "b7c872828367c26c96172c9d840d112ab7e07dbe",
+                "url": "https://api.github.com/repos/inpsyde/wp-db-types/zipball/45bfdd910a49ff1dc96c25766f4668bd85386588",
+                "reference": "45bfdd910a49ff1dc96c25766f4668bd85386588",
                 "shasum": ""
             },
             "require": {
                 "dnaber/string-theory": "dev-master",
                 "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "inpsyde/monkery-test-case": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -103,7 +106,7 @@
                 "source": "https://github.com/inpsyde/wp-db-types/tree/master",
                 "issues": "https://github.com/inpsyde/wp-db-types/issues"
             },
-            "time": "2016-03-10 16:38:12"
+            "time": "2016-03-11 09:21:59"
         },
         {
             "name": "inpsyde/wp-prepared-statements-converter",
@@ -351,6 +354,91 @@
             ],
             "description": "Composition package of brain/monkey and mockery/mockery with a custom test case",
             "time": "2016-03-10 16:32:13"
+        },
+        {
+            "name": "inpsyde/wordpress-dev",
+            "version": "4.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inpsyde/wordpress-dev.git",
+                "reference": "2462ff4d6924065ad28b6ef57d943e7d3a2f2bce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inpsyde/wordpress-dev/zipball/2462ff4d6924065ad28b6ef57d943e7d3a2f2bce",
+                "reference": "2462ff4d6924065ad28b6ef57d943e7d3a2f2bce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "http://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "homepage": "http://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "time": "2016-02-02 17:21:22"
+        },
+        {
+            "name": "inpsyde/wp-tests-starter",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inpsyde/WP-Tests-Starter.git",
+                "reference": "c585234a96109dbb7708bd34abfd64542bb07f01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inpsyde/WP-Tests-Starter/zipball/c585234a96109dbb7708bd34abfd64542bb07f01",
+                "reference": "c585234a96109dbb7708bd34abfd64542bb07f01",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "inpsyde/wordpress-dev": "dev-master"
+            },
+            "suggest": {
+                "inpsyde/wordpress-dev": "WordPress development composer package."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpTestsStarter\\": "src/WpTestsStarter"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Naber",
+                    "email": "d.naber@inpsyde.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package that helps you setting up WordPress integration test environments quickly.",
+            "keywords": [
+                "integration tests",
+                "tests",
+                "wordpress"
+            ],
+            "time": "2016-01-27 23:05:52"
         },
         {
             "name": "mockery/mockery",

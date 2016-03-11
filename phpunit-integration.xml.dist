@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+	bootstrap="tests/phpunit/WpIntegration/bootstrap.php"
+	backupGlobals="false"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	>
+	<php>
+		<!--
+			Copy this file to phpunit-integration.xml and insert
+			your DB credentials in your local copy. the local copy
+			is ignored by git so you can't accidentally commit your credentials.
+
+			Start tests by using your local copy:
+			$ phpunit -c phpunit-integration.xml
+		-->
+		<const name="WpDbTools\DB_NAME" value="" />
+		<const name="WpDbTools\DB_USER" value="" />
+		<const name="WpDbTools\DB_PASS" value="" />
+		<const name="WpDbTools\DB_HOST" value="" />
+		<const name="WpDbTools\TABLE_PREFIX" value="wpdbt_" />
+	</php>
+	<testsuites>
+		<testsuite name="WP integration tests">
+			<directory suffix="Test.php">./tests/phpunit/WpIntegration/</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
