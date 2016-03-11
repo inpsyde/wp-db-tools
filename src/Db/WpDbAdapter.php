@@ -70,17 +70,20 @@ class WpDbAdapter implements Database {
 	 * Executes a Statement and return a Result
 	 *
 	 * @param Type\Statement $statement
-	 * @param array $data (Optional)
+	 * @param array $data
 	 * @param int $options (Optional)
 	 *
 	 * @return Type\Result
 	 */
-	public function query_statement( Type\Statement $statement, array $data = [ ], $options = 0 ) {
+	public function query_statement( Type\Statement $statement, array $data, $options = 0 ) {
 
 		// @todo maybe convert statement in a decorator
-		$query                    = $this->wpdb->prepare( (string) $statement, $data );
-		$result                   = $this->query( $query );
-		$this->last_statement     = $statement;
+		$query = call_user_func_array(
+			[ $this->wpdb, 'prepare' ],
+			array_merge( [ (string) $statement] , $data )
+		);
+		$result               = $this->query( $query );
+		$this->last_statement = $statement;
 
 		return $result;
 	}
@@ -89,12 +92,12 @@ class WpDbAdapter implements Database {
 	 * Executes a Statement and return the number of affected rows
 	 *
 	 * @param Type\Statement $statement
-	 * @param array $data (Optional)
+	 * @param array $data
 	 * @param int $options (Optional)
 	 *
 	 * @return int
 	 */
-	public function execute_statement( Type\Statement $statement, array $data = [ ], $options = 0 ) {
+	public function execute_statement( Type\Statement $statement, array $data, $options = 0 ) {
 
 		$this->query_statement( $statement, $data, $options );
 

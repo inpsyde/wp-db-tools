@@ -39,11 +39,9 @@ class MySqlTableCopier implements TableCopier {
 		$this->copy_structure( $src, $dest );
 		$src_table  = $this->database->quote_identifier( $src->name() );
 		$dest_table = $this->database->quote_identifier( $dest->name() );
-		$statement  = new Type\ArbitraryStatement(
-			"INSERT {$dest_table} SELECT * FROM {$src_table}"
-		);
+		$query      = "INSERT INTO {$dest_table} SELECT * FROM {$src_table}";
 
-		return (bool) $this->database->execute_statement( $statement );
+		return (bool) $this->database->query( $query );
 	}
 
 	/**
@@ -63,7 +61,7 @@ class MySqlTableCopier implements TableCopier {
 		);
 
 		// this will always return 0 even on error
-		$this->database->execute_statement( $statement );
+		$this->database->query( $statement );
 
 		return TRUE;
 	}
