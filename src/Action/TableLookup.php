@@ -2,6 +2,9 @@
 
 namespace WpDbTools\Action;
 
+use
+	WpDbTypes\Type;
+
 /**
  * Interface TableLookup
  *
@@ -12,7 +15,7 @@ namespace WpDbTools\Action;
 interface TableLookup {
 
 	/**
-	 * @param string $table
+	 * @param string|Type\Table $table
 	 *
 	 * @return bool
 	 */

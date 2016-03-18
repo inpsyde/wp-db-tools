@@ -27,7 +27,7 @@ class MySqlTableLookup implements TableLookup {
 	}
 
 	/**
-	 * @param string $table
+	 * @param string|Type\Table $table
 	 *
 	 * @return bool
 	 */
