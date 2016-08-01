@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e0d5669fe7ed825077cf3ff38e1d529b",
-    "content-hash": "be8d352b7698c151ab1430e26b87ea01",
+    "hash": "a457c9aa23bd85a5570f7e0c5ba8f467",
+    "content-hash": "770686f28a0d00055e0b51fe55041b70",
     "packages": [
         {
             "name": "dnaber/string-theory",
@@ -315,16 +315,16 @@
         },
         {
             "name": "inpsyde/monkery-test-case",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inpsyde/monkery-test-case.git",
-                "reference": "7addf56771739ab21624f24a1519eba5384bd002"
+                "reference": "599ae0a9c7c981486a1953ee55bcfedce799b0b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inpsyde/monkery-test-case/zipball/7addf56771739ab21624f24a1519eba5384bd002",
-                "reference": "7addf56771739ab21624f24a1519eba5384bd002",
+                "url": "https://api.github.com/repos/inpsyde/monkery-test-case/zipball/599ae0a9c7c981486a1953ee55bcfedce799b0b0",
+                "reference": "599ae0a9c7c981486a1953ee55bcfedce799b0b0",
                 "shasum": ""
             },
             "require": {
@@ -352,8 +352,8 @@
                     "role": "Company"
                 }
             ],
-            "description": "Composition package of brain/monkey and mockery/mockery with a custom test case",
-            "time": "2016-03-10 16:32:13"
+            "description": "Composition package of brain/monkey and mockery/mockery with a custom test case class for PHPUnit",
+            "time": "2016-05-29 08:59:45"
         },
         {
             "name": "inpsyde/wordpress-dev",
@@ -510,8 +510,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "inpsyde/wp-db-types": 20,
-        "inpsyde/wp-prepared-statements-converter": 20,
-        "inpsyde/monkery-test-case": 20
+        "inpsyde/wp-prepared-statements-converter": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
