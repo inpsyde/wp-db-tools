@@ -1,43 +1,43 @@
 {
-  "name": "inpsyde/wp-db-tools",
-  "description": "Provides an engine-independent, simplified interface to MySQL databases.",
-  "license": "MIT",
-  "authors" : [
-    {
-      "name": "Inpsyde GmbH",
-      "role": "Company",
-      "homepage": "http://inpsyde.com"
-    },
-    {
-      "name": "David Naber",
-      "email": "kontakt@dnaber.de",
-      "homepage": "https://dnaber.de/",
-      "role": "Developer"
-    }
-  ],
-  "minimum-stability": "dev",
-  "require": {
-    "inpsyde/wp-db-types": "dev-master",
-    "inpsyde/wp-prepared-statements-converter": "dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "WpDbTools\\": "src/"
-    }
-  },
-  "require-dev": {
-    "inpsyde/monkery-test-case":"dev-master",
-    "inpsyde/wp-tests-starter": "^1.0",
-    "inpsyde/wordpress-dev": "^4.4"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/inpsyde/wp-db-types.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/inpsyde/wp-prepared-statements-converter.git"
-    }
-  ]
+	"name": "inpsyde/wp-db-tools",
+	"description": "Provides an engine-independent, simplified interface to MySQL databases.",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Inpsyde GmbH",
+			"role": "Company",
+			"homepage": "http://inpsyde.com"
+		},
+		{
+			"name": "David Naber",
+			"email": "kontakt@dnaber.de",
+			"homepage": "https://dnaber.de/",
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"inpsyde/wp-db-types": "dev-master",
+		"inpsyde/wp-prepared-statements-converter": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"WpDbTools\\": "src/"
+		}
+	},
+	"require-dev": {
+		"inpsyde/monkery-test-case": "dev-master",
+		"inpsyde/wp-tests-starter": "^1.0",
+		"inpsyde/wordpress-dev": "^4.4"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/inpsyde/wp-db-types.git"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/inpsyde/wp-prepared-statements-converter.git"
+		}
+	]
 }
