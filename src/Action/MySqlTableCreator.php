@@ -2,9 +2,8 @@
 
 namespace WpDbTools\Action;
 
-use
-	WpDbTools\Db,
-	WpDbTypes\Type;
+use WpDbTools\Db\Database;
+use WpDbTools\Type\TableSchema;
 
 /**
  * Class MySqlTableCreator
@@ -14,24 +13,24 @@ use
 class MySqlTableCreator implements TableCreator {
 
 	/**
-	 * @var Db\Database
+	 * @var Database
 	 */
 	private $database;
 
 	/**
-	 * @param Db\Database $database
+	 * @param Database $database
 	 */
-	public function __construct( Db\Database $database ) {
+	public function __construct( Database $database ) {
 
 		$this->database = $database;
 	}
 
 	/**
-	 * @param Type\TableSchema $table_structure
+	 * @param TableSchema $table_structure
 	 *
 	 * @return bool
 	 */
-	public function create_table( Type\TableSchema $table_structure ) {
+	public function create_table( TableSchema $table_structure ) {
 		// TODO: Implement create_table() method.
 	}
 

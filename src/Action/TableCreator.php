@@ -2,8 +2,7 @@
 
 namespace WpDbTools\Action;
 
-use
-	WpDbTypes\Type;
+use WpDbTools\Type\TableSchema;
 
 /**
  * Interface TableCreator
@@ -15,9 +14,9 @@ use
 interface TableCreator {
 
 	/**
-	 * @param Type\TableSchema $table_structure
+	 * @param TableSchema $table_structure
 	 *
 	 * @return bool
 	 */
-	public function create_table( Type\TableSchema $table_structure );
+	public function create_table( TableSchema $table_structure );
 }

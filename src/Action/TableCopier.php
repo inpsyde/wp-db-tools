@@ -2,8 +2,7 @@
 
 namespace WpDbTools\Action;
 
-use
-	WpDbTypes\Type;
+use WpDbTools\Type\Table;
 
 /**
  * Interface TableCopier
@@ -17,20 +16,20 @@ interface TableCopier {
 	/**
 	 * Duplicates a table structure with the complete content
 	 *
-	 * @param Type\Table $src
-	 * @param Type\Table $dest
+	 * @param Table $src
+	 * @param Table $dest
 	 *
 	 * @return bool
 	 */
-	public function copy( Type\Table $src, Type\Table $dest );
+	public function copy( Table $src, Table $dest );
 
 	/**
 	 * Creates a new, empty table with the same structure of the $src table
 	 *
-	 * @param Type\Table $src
-	 * @param Type\Table $dest
+	 * @param Table $src
+	 * @param Table $dest
 	 *
 	 * @return bool
 	 */
-	public function copy_structure( Type\Table $src, Type\Table $dest );
+	public function copy_structure( Table $src, Table $dest );
 }

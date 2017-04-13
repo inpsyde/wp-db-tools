@@ -17,7 +17,6 @@
 	],
 	"minimum-stability": "dev",
 	"require": {
-		"inpsyde/wp-db-types": "dev-master",
 		"inpsyde/wp-prepared-statements-converter": "dev-master"
 	},
 	"autoload": {

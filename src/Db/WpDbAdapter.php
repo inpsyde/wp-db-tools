@@ -2,10 +2,10 @@
 
 namespace WpDbTools\Db;
 
-use
-	WpDbTypes\Type,
-	WpPreparedStatementsConverter\Converter,
-	wpdb;
+use WpDbTools\Type\GenericResult;
+use WpDbTools\Type\Result;
+use WpDbTools\Type\Statement;
+use wpdb;
 
 /**
  * Class WpDbAdapter
@@ -24,7 +24,7 @@ class WpDbAdapter implements Database {
 	private $wpdb;
 
 	/**
-	 * @var Type\Statement
+	 * @var \WpDbTools\Type\Statement
 	 */
 	private $last_statement;
 
@@ -52,7 +52,7 @@ class WpDbAdapter implements Database {
 	 * @param $query
 	 * @param int $options
 	 *
-	 * @return Type\Result
+	 * @return \WpDbTools\Type\Result
 	 */
 	public function query( $query, $options = 0 ) {
 
@@ -63,19 +63,19 @@ class WpDbAdapter implements Database {
 		if ( ! is_array( $result ) )
 			$result = [];
 
-		return new Type\GenericResult( $result );
+		return new GenericResult( $result );
 	}
 
 	/**
 	 * Executes a Statement and return a Result
 	 *
-	 * @param Type\Statement $statement
+	 * @param Statement $statement
 	 * @param array $data
 	 * @param int $options (Optional)
 	 *
-	 * @return Type\Result
+	 * @return Result
 	 */
-	public function query_statement( Type\Statement $statement, array $data, $options = 0 ) {
+	public function query_statement( Statement $statement, array $data, $options = 0 ) {
 
 		// @todo maybe convert statement in a decorator
 		$query = call_user_func_array(
@@ -91,13 +91,13 @@ class WpDbAdapter implements Database {
 	/**
 	 * Executes a Statement and return the number of affected rows
 	 *
-	 * @param Type\Statement $statement
+	 * @param Statement $statement
 	 * @param array $data
 	 * @param int $options (Optional)
 	 *
 	 * @return int
 	 */
-	public function execute_statement( Type\Statement $statement, array $data, $options = 0 ) {
+	public function execute_statement( Statement $statement, array $data, $options = 0 ) {
 
 		$this->query_statement( $statement, $data, $options );
 
@@ -108,11 +108,11 @@ class WpDbAdapter implements Database {
 	 * Returns the inserted ID of the last executed statement. If a statement
 	 * is provided it should be verified that it is the same as the last executed one.
 	 *
-	 * @param Type\Statement $statement (Optional)
+	 * @param Statement $statement (Optional)
 	 *
 	 * @return int|false
 	 */
-	public function last_insert_id( Type\Statement $statement = NULL ) {
+	public function last_insert_id( Statement $statement = NULL ) {
 
 		if ( $statement && ! $this->last_statement === $statement )
 			return FALSE;
@@ -125,11 +125,11 @@ class WpDbAdapter implements Database {
 	 * If a statement is provided it should be verified that it is the same
 	 * as the last executed one.
 	 *
-	 * @param Type\Statement $statement (Optional)
+	 * @param Statement $statement (Optional)
 	 *
 	 * @return mixed
 	 */
-	public function last_affected_rows( Type\Statement $statement = NULL ) {
+	public function last_affected_rows( Statement $statement = NULL ) {
 
 		if ( $statement && ! $this->last_statement === $statement )
 			return FALSE;

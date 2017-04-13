@@ -2,8 +2,7 @@
 
 namespace WpDbTools\Action;
 
-use
-	WpDbTypes\Type;
+use WpDbTools\Type\Table;
 
 /**
  * Interface TableLookup
@@ -15,9 +14,9 @@ use
 interface TableLookup {
 
 	/**
-	 * @param string|Type\Table $table
+	 * @param Table $table
 	 *
 	 * @return bool
 	 */
-	public function table_exists( $table );
+	public function table_exists( Table $table );
 }

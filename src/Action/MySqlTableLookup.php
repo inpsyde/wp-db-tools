@@ -2,9 +2,9 @@
 
 namespace WpDbTools\Action;
 
-use
-	WpDbTools\Db,
-	WpDbTypes\Type;
+use WpDbTools\Db\Database;
+use WpDbTools\Type\ArbitraryStatement;
+use WpDbTools\Type\Table;
 
 /**
  * Class MySqlTableLookup
@@ -14,28 +14,28 @@ use
 class MySqlTableLookup implements TableLookup {
 
 	/**
-	 * @var Db\Database
+	 * @var Database
 	 */
 	private $database;
 
 	/**
-	 * @param Db\Database $database
+	 * @param Database $database
 	 */
-	public function __construct( Db\Database $database ) {
+	public function __construct( Database $database ) {
 
 		$this->database = $database;
 	}
 
 	/**
-	 * @param string|Type\Table $table
+	 * @param Table $table
 	 *
 	 * @return bool
 	 */
-	public function table_exists( $table ) {
+	public function table_exists( Table $table ) {
 
-		$statement = new Type\ArbitraryStatement( "SHOW TABLES LIKE %s" );
+		$statement = new ArbitraryStatement( "SHOW TABLES LIKE %s" );
 		$result = $this->database
-			->query_statement( $statement, [ $table ] );
+			->query_statement( $statement, [ (string) $table ] );
 
 		if ( ! $result->valid() )
 			return FALSE;

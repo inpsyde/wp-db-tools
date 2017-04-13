@@ -7,6 +7,7 @@ use
 	WpDbTypes\Type,
 	wpdb,
 	WP_UnitTestCase;
+use WpDbTools\Type\NamedTable;
 
 /**
  * Class MySqlTableCopierTest
@@ -46,8 +47,8 @@ class MySqlTableCopierTest extends WP_UnitTestCase {
 
 		/* @var wpdb $wpdb */
 		$wpdb               = $GLOBALS[ 'wpdb' ];
-		$origin_table       = new Type\NamedTable( $wpdb->options );
-		$new_table          = new Type\NamedTable( "new_{$wpdb->options}_table_structure" );
+		$origin_table       = new NamedTable( $wpdb->options );
+		$new_table          = new NamedTable( "new_{$wpdb->options}_table_structure" );
 		$this->new_tables[] = $new_table;
 		// drop table if previous test failed
 		$wpdb->query( "DROP TABLE IF EXISTS `{$new_table}`" );
@@ -94,8 +95,8 @@ class MySqlTableCopierTest extends WP_UnitTestCase {
 
 		/* @var wpdb $wpdb */
 		$wpdb               = $GLOBALS[ 'wpdb' ];
-		$origin_table       = new Type\NamedTable( $wpdb->options );
-		$new_table          = new Type\NamedTable( "new_{$wpdb->options}_table" );
+		$origin_table       = new NamedTable( $wpdb->options );
+		$new_table          = new NamedTable( "new_{$wpdb->options}_table" );
 		$this->new_tables[] = $new_table;
 		$wpdb->query( "DROP TABLE IF EXISTS `{$new_table}`" );
 		$tables = $wpdb->get_col( 'SHOW TABLES' );
