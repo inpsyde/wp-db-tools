@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phive xmlns="https://phar.io/phive" xmlns:phive="https://phar.io/phive">
+  <phive:configuration>
+    <phive:targetDirectory>./tests/bin</phive:targetDirectory>
+  </phive:configuration>
+  <phar name="phpunit" version="^5.7" location="./tests/bin/phpunit" installed="5.7.19"/>
+</phive>
