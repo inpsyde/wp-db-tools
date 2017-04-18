@@ -7,7 +7,7 @@ namespace WpDbTools\Type;
  *
  * @package WpDbTypes\Type
  */
-class NamedTable implements Table {
+class GenericTable implements Table {
 
 	/**
 	 * @var string

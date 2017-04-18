@@ -10,7 +10,7 @@ namespace WpDbTools\Type;
 interface TableSchema extends Table {
 
 	/**
-	 * Returns an array of colum_name => column description
+	 * Returns an array of column_name => column description
 	 *
 	 * @return array
 	 */

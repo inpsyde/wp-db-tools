@@ -7,7 +7,7 @@ namespace WpDbTools\Type;
  *
  * @package WpDbTypes\Type
  */
-class ArbitraryStatement implements Statement {
+class GenericStatement implements Statement {
 
 	/**
 	 * @var string

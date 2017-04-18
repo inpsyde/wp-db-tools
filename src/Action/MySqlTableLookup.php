@@ -3,7 +3,7 @@
 namespace WpDbTools\Action;
 
 use WpDbTools\Db\Database;
-use WpDbTools\Type\ArbitraryStatement;
+use WpDbTools\Type\GenericStatement;
 use WpDbTools\Type\Table;
 
 /**
@@ -33,7 +33,7 @@ class MySqlTableLookup implements TableLookup {
 	 */
 	public function table_exists( Table $table ) {
 
-		$statement = new ArbitraryStatement( "SHOW TABLES LIKE %s" );
+		$statement = new GenericStatement( "SHOW TABLES LIKE %s" );
 		$result = $this->database
 			->query_statement( $statement, [ (string) $table ] );
 

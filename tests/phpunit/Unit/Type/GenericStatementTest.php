@@ -9,15 +9,15 @@ use	MonkeryTestCase;
  *
  * @package WpDbTypes\Type
  */
-class ArbitraryStatementTest extends MonkeryTestCase\TestCase {
+class GenericStatementTest extends MonkeryTestCase\TestCase {
 
 	/**
-	 * @covers ArbitraryStatement::statement
+	 * @covers GenericStatement::statement
 	 */
 	public function test_contains() {
 
 		$string = "SELECT * FROM TABLE WHERE `colum` LIKE '%Übertest%'";
-		$testee = new ArbitraryStatement( $string );
+		$testee = new GenericStatement( $string );
 
 		$this->assertSame(
 			$string,

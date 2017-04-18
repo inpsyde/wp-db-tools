@@ -55,7 +55,7 @@ class MySqlTableCopier implements TableCopier {
 
 		$src_table  = $this->database->quote_identifier( $src->name() );
 		$dest_table = $this->database->quote_identifier( $dest->name() );
-		$statement  = new \WpDbTools\Type\ArbitraryStatement(
+		$statement  = new \WpDbTools\Type\GenericStatement(
 			"CREATE TABLE {$dest_table} LIKE {$src_table}"
 		);
 

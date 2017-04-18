@@ -9,15 +9,15 @@ use MonkeryTestCase;
  *
  * @package WpDbTypes\Type
  */
-class NamedTableTest extends MonkeryTestCase\TestCase {
+class GenericTableTest extends MonkeryTestCase\TestCase {
 
 	/**
-	 * @covers NamedTable::name
+	 * @covers GenericTable::name
 	 */
 	public function test_name() {
 
 		$name = 'übertable';
-		$testee = new NamedTable( $name );
+		$testee = new GenericTable( $name );
 
 		$this->assertSame(
 			$name,
