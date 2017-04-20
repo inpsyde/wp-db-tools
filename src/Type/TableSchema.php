@@ -10,30 +10,23 @@ namespace WpDbTools\Type;
 interface TableSchema extends Table {
 
 	/**
-	 * Returns an array of column_name => column description
+	 * Returns a list of column_name => column description
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function schema();
 
 	/**
-	 * Name of the primary key column
+	 * Name of the primary key columns
 	 *
-	 * @return string
+	 * @return string[]
 	 */
 	public function primary_key();
 
 	/**
-	 * List of auto-increment / auto-filled columns
+	 * Returns a list of index_name => index_description
 	 *
-	 * @return array
-	 */
-	public function autofilled_keys();
-
-	/**
-	 * List of indices
-	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function indices();
 }
