@@ -64,9 +64,9 @@ final class GenericTableSchema implements TableSchema {
 	}
 
 	/**
-	 * Returns a list of column_name => column description
+	 * Returns a list of [ id => [ name => <column_name>, description => <column_description> ], ... ]
 	 *
-	 * @return string[]
+	 * @return array[]
 	 */
 	public function schema() {
 
@@ -84,9 +84,9 @@ final class GenericTableSchema implements TableSchema {
 	}
 
 	/**
-	 * Returns a list of index_name => index_description
+	 * Returns a list of [ id => [ name => <index_name>, description => <index_description> ], ... ]
 	 *
-	 * @return string[]
+	 * @return array[]
 	 */
 	public function indices() {
 
@@ -115,13 +115,25 @@ final class GenericTableSchema implements TableSchema {
 			throw new InvalidTableSchema( "Parameter 'schema' must be of type array" );
 		}
 
-		array_walk( $definition[ self::TABLE_SCHEMA_INDEX ], function( $definition, $name ) {
+		array_walk( $definition[ self::TABLE_SCHEMA_INDEX ], function( $column, $id ) {
 
-			if ( ! is_string( $name ) ) {
+			if ( ! is_string( $id ) ) {
 				throw new InvalidTableSchema( "Column name must be a string" );
 			}
-			if ( ! is_string( $definition ) ) {
-				throw new InvalidTableSchema( "Column definition must be a string" );
+			if ( ! is_array( $column ) ) {
+				throw new InvalidTableSchema( "Column must be of type array" );
+			}
+			if ( ! array_key_exists( 'name', $column ) ) {
+				throw new InvalidTableSchema( "Missing column name" );
+			}
+			if ( ! array_key_exists( 'description', $column ) ) {
+				throw new InvalidTableSchema( "Missing column description" );
+			}
+			if ( ! is_string( $column[ 'name' ] ) ) {
+				throw new InvalidTableSchema( "Column name must be of type string" );
+			}
+			if ( ! is_string( $column[ 'description' ] ) ) {
+				throw new InvalidTableSchema( "Column description must be of type string" );
 			}
 		} );
 
@@ -164,12 +176,24 @@ final class GenericTableSchema implements TableSchema {
 			throw new InvalidTableSchema( "Indices definition must be of type array" );
 		}
 
-		array_walk( $definition[ self::TABLE_INDICES_INDEX ], function( $definition, $name ) {
-			if ( ! is_string( $name ) ) {
-				throw new InvalidTableSchema( "Index name must be a string" );
+		array_walk( $definition[ self::TABLE_INDICES_INDEX ], function( $index, $id ) {
+			if ( ! is_string( $id ) ) {
+				throw new InvalidTableSchema( "Index name must be of type string" );
 			}
-			if ( ! is_string( $definition ) ) {
-				throw new InvalidTableSchema( "Index definition must be a string" );
+			if ( ! is_array( $index ) ) {
+				throw new InvalidTableSchema( "Index definition must be of type array" );
+			}
+			if ( ! array_key_exists( 'name', $index ) ) {
+				throw new InvalidTableSchema( "Missing index name" );
+			}
+			if ( ! array_key_exists( 'description', $index ) ) {
+				throw new InvalidTableSchema( "Missing index description" );
+			}
+			if ( ! is_string( $index[ 'name' ] ) ) {
+				throw new InvalidTableSchema( "Index name must be of type string" );
+			}
+			if ( ! is_string( $index[ 'description' ] ) ) {
+				throw new InvalidTableSchema( "Index description must be of type string" );
 			}
 		} );
 

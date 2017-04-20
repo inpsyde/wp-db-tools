@@ -10,9 +10,9 @@ namespace WpDbTools\Type;
 interface TableSchema extends Table {
 
 	/**
-	 * Returns a list of column_name => column description
+	 * Returns a list of [ id => [ name => <column_name>, description => <column_description> ], ... ]
 	 *
-	 * @return string[]
+	 * @return array[]
 	 */
 	public function schema();
 
@@ -24,9 +24,9 @@ interface TableSchema extends Table {
 	public function primary_key();
 
 	/**
-	 * Returns a list of index_name => index_description
+	 * Returns a list of [ id => [ name => <index_name>, description => <index_description> ], ... ]
 	 *
-	 * @return string[]
+	 * @return array[]
 	 */
 	public function indices();
 }

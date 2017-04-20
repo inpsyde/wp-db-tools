@@ -13,7 +13,10 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 		$definition = [
 			'name' => 'my_table',
 			'schema' => [
-				'id' => "BIGINT(20)",
+				'id' => [
+					'name' => 'id',
+					'description' => "BIGINT(20)",
+				],
 			],
 		];
 
@@ -30,7 +33,10 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 		$definition = [
 			'name' => 'my_table',
 			'schema' => [
-				'id' => "BIGINT(20)",
+				'id' => [
+					'name' => 'id',
+					'description' => "BIGINT(20)",
+				],
 			],
 		];
 
@@ -47,7 +53,10 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 		$definition = [
 			'name' => 'my_table',
 			'schema' => [
-				'id' => "BIGINT(20)",
+				'id' => [
+					'name' => 'id',
+					'description' => "BIGINT(20)",
+				],
 			],
 			'primary_key' => [
 				'id',
@@ -67,10 +76,16 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 		$definition = [
 			'name' => 'my_table',
 			'schema' => [
-				'id' => "BIGINT(20)",
+				'id' => [
+					'name' => 'id',
+					'description' => "BIGINT(20)",
+				],
 			],
 			'indices' => [
-				'id' => "KEY id (id)",
+				'id' => [
+					'name' => 'id',
+					'description' => "KEY id (id)",
+				],
 			],
 		];
 
@@ -104,14 +119,22 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 
 		return [
 			'missing_name' => [
-				[
-					'schema' => [ 'id' => 'BIGINT' ],
+				'schema' => [
+					'id' => [
+						'name' => 'id',
+						'description' => 'BIGINT(20)',
+					],
 				],
 			],
 			'name_is_not_string' => [
 				[
 					'name' => 3.15159,
-					'schema' => [ 'id' => 'BIGINT' ],
+					'schema' => [
+						'id' => [
+							'name' => 'id',
+							'description' => 'BIGINT(20)',
+						],
+					],
 				],
 			],
 			'missing_schema' => [
@@ -131,52 +154,121 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 					'schema' => [ 'id', 'title' ],
 				],
 			],
-			'schema_values_not_string' => [
+			'schema_values_not_array' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => false, 'title' => 3 ],
+					'schema' => [
+						'id' => false,
+						'title' => 3,
+					],
+				],
+			],
+			'schema_column_name_missing' => [
+				[
+					'name' => 'my_table',
+					'schema' => [
+						'id' => [
+							'description' => 'foo',
+						],
+					],
+				],
+			],
+			'schema_column_description_missing' => [
+				[
+					'name' => 'my_table',
+					'schema' => [
+						'id' => [
+							'name' => 'foo',
+						],
+					],
 				],
 			],
 			'primary_key_not_array' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => 'BIGINT' ],
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
 					'primary_key' => false,
 				],
 			],
 			'primary_key_missing_column' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => 'BIGINT' ],
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
 					'primary_key' => [ 'title' ],
 				],
 			],
 			'primary_key_not_contains_strings' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => 'BIGINT' ],
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
 					'primary_key' => [ false ],
 				],
 			],
 			'indices_not_array' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => 'BIGINT' ],
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
 					'indices' => 4,
 				],
 			],
-			'indices_keys_not_string' => [
+			'indices_key_not_string' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => 'BIGINT' ],
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
 					'indices' => [ 'KEY id(20)' ],
 				],
 			],
-			'indices_values_not_string' => [
+			'indices_value_not_string' => [
 				[
 					'name' => 'my_table',
-					'schema' => [ 'id' => 'BIGINT' ],
-					'indices' => [ 'id' => false ],
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
+					'indices' => [ 'id' => 'KEY id(20)' ],
+				],
+			],
+			'indices_missing_name' => [
+				[
+					'name' => 'my_table',
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
+					'indices' => [
+						'id' => [
+							'description' => 'KEY id(20)',
+						],
+					],
+				],
+			],
+			'indices_missing_description' => [
+				[
+					'name' => 'my_table',
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
+					'indices' => [
+						'id' => [
+							'name' => 'id',
+						],
+					],
+				],
+			],
+			'indices_name_is_not_string' => [
+				[
+					'name' => 'my_table',
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
+					'indices' => [
+						'id' => [
+							'name' => 123,
+							'description' => 'KEY id(20)',
+						],
+					],
+				],
+			],
+			'indices_description_is_not_string' => [
+				[
+					'name' => 'my_table',
+					'schema' => [ 'id' => [ 'name' => 'id', 'description' => 'BIGINT(20)' ] ],
+					'indices' => [
+						'id' => [
+							'name' => 'od',
+							'description' => 20,
+						],
+					],
 				],
 			],
 		];
