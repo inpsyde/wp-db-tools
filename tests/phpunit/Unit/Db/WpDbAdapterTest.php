@@ -2,17 +2,15 @@
 
 namespace WpDbTools\Db;
 
-use
-	Brain,
-	Mockery,
-	MonkeryTestCase;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
+use Mockery;
 
 /**
  * Class WpDbAdapterTest
  *
  * @package WpDbTools\Db
  */
-class WpDbAdapterTest extends MonkeryTestCase\TestCase {
+class WpDbAdapterTest extends BrainMonkeyWpTestCase {
 
 	public function test_query() {
 

@@ -2,22 +2,20 @@
 
 namespace WpDbTools\Action;
 
-use
-	WpDbTools\Db,
-	Brain,
-	Mockery,
-	MonkeryTestCase;
+use	WpDbTools\Db\Database;
+use Mockery;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
 
 /**
  * Class MySqlTableCopierTest
  *
  * @package WpDbTools\Action
  */
-class MySqlTableCopierTest extends MonkeryTestCase\TestCase {
+class MySqlTableCopierTest extends BrainMonkeyWpTestCase {
 
 	public function test_copy() {
 
-		$adapter_mock = Mockery::mock( Db\Database::class );
+		$adapter_mock = Mockery::mock( Database::class );
 		$testee = new MySqlTableCopier( $adapter_mock );
 
 		$this->markTestSkipped( 'Under construction…' );

@@ -2,14 +2,14 @@
 
 namespace WpDbTools\Type;
 
-use	MonkeryTestCase;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
 
 /**
  * Class ArbitraryStatementTest
  *
  * @package WpDbTypes\Type
  */
-class GenericStatementTest extends MonkeryTestCase\TestCase {
+class GenericStatementTest extends BrainMonkeyWpTestCase {
 
 	/**
 	 * @covers GenericStatement::statement

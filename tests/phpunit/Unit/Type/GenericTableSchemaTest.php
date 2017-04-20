@@ -2,11 +2,11 @@
 
 namespace WpDbTypes\Type;
 
-use MonkeryTestCase\TestCase;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
 use WpDbTools\Exception\Type\InvalidTableSchema;
 use WpDbTools\Type\GenericTableSchema;
 
-class GenericTableSchemaTest extends TestCase {
+class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 
 	public function test_name() {
 

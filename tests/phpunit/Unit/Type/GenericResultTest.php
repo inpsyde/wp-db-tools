@@ -2,7 +2,7 @@
 
 namespace WpDbTools\Type;
 
-use MonkeryTestCase;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
 use stdClass;
 
 /**
@@ -10,7 +10,7 @@ use stdClass;
  *
  * @package WpDbTypes\Type
  */
-class GenericResultTest extends MonkeryTestCase\TestCase {
+class GenericResultTest extends BrainMonkeyWpTestCase {
 
 	/**
 	 * @covers GenericResult::offsetGet

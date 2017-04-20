@@ -2,14 +2,14 @@
 
 namespace WpDbTools\Type;
 
-use MonkeryTestCase;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
 
 /**
  * Class NamedTableTest
  *
  * @package WpDbTypes\Type
  */
-class GenericTableTest extends MonkeryTestCase\TestCase {
+class GenericTableTest extends BrainMonkeyWpTestCase {
 
 	/**
 	 * @covers GenericTable::name

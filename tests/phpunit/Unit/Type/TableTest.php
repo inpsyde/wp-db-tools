@@ -2,14 +2,14 @@
 
 namespace WpDbTypes\Type;
 
-use MonkeryTestCase;
+use MonkeryTestCase\BrainMonkeyWpTestCase;
 
 /**
  * Class TableTest
  *
  * @package WpDbTypes\Type
  */
-class TableTest extends MonkeryTestCase\TestCase {
+class TableTest extends BrainMonkeyWpTestCase {
 
 	/**
 	 * Test if the interface is detected by the auto loader config
