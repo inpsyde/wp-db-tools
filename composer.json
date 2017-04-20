@@ -16,6 +16,7 @@
 		}
 	],
 	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"require": {
 		"inpsyde/wp-prepared-statements-converter": "dev-master"
 	},
