@@ -14,9 +14,9 @@ use WpDbTools\Type\TableSchema;
 interface TableCreator {
 
 	/**
-	 * @param TableSchema $table_structure
+	 * @param TableSchema $schema
 	 *
 	 * @return bool
 	 */
-	public function create_table( TableSchema $table_structure );
+	public function create_table( TableSchema $schema );
 }
