@@ -2,6 +2,7 @@
 
 namespace WpDbTools\Db;
 
+use WpDbTools\Exception\Db\WpDbExecuteException;
 use WpDbTools\Type\GenericResult;
 use WpDbTools\Type\Result;
 use WpDbTools\Type\Statement;
@@ -47,6 +48,23 @@ class WpDbAdapter implements Database {
 	}
 
 	/**
+	 * @param string $statement
+	 *
+	 * @throws WpDbExecuteException
+	 *
+	 * @return int
+	 */
+	public function execute( $statement ) {
+
+		$result = $this->wpdb->query( $statement );
+		if ( FALSE === $result ) {
+			throw new WpDbExecuteException( $this->wpdb->last_error );
+		}
+
+		return (int) $result;
+	}
+
+	/**
 	 * Executes a plain SQL query and return the results
 	 *
 	 * @param $query
@@ -77,7 +95,6 @@ class WpDbAdapter implements Database {
 	 */
 	public function query_statement( Statement $statement, array $data, $options = 0 ) {
 
-		// @todo maybe convert statement in a decorator
 		$query = call_user_func_array(
 			[ $this->wpdb, 'prepare' ],
 			array_merge( [ (string) $statement] , $data )

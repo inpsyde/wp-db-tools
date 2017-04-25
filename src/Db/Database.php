@@ -2,6 +2,7 @@
 
 namespace WpDbTools\Db;
 
+use WpDbTools\Exception\Db\WpDbExecuteException;
 use WpDbTools\Type\Statement;
 use WpDbTools\Type\Result;
 
@@ -11,6 +12,15 @@ use WpDbTools\Type\Result;
  * @package WpDbTools\Db
  */
 interface Database {
+
+	/**
+	 * @param string $statement
+	 *
+	 * @throws WpDbExecuteException
+	 *
+	 * @return int
+	 */
+	public function execute( $statement );
 
 	/**
 	 * Executes a plain SQL query and return the results.
