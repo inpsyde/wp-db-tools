@@ -3,6 +3,7 @@
 namespace WpDbTools\Factory;
 
 use Symfony\Component\Yaml\Yaml;
+use WpDbTools\Exception\RuntimeException;
 use WpDbTools\Exception\Type\InvalidTableSchema;
 use WpDbTools\Type\GenericTableSchema;
 use WpDbTools\Type\TableSchema;
@@ -63,9 +64,14 @@ class TableSchemaFactory {
 	}
 
 	/**
+	 * @throws RuntimeException
 	 * @return TableSchemaFactory
 	 */
 	public static function from_globals() {
+
+		if ( empty( $GLOBALS[ 'wpdb' ] ) || ! $GLOBALS[ 'wpdb' ] instanceof wpdb ) {
+			throw new RuntimeException( "Global \$wpdb not type of wpdb" );
+		}
 
 		return new self( $GLOBALS[ 'wpdb' ] );
 	}

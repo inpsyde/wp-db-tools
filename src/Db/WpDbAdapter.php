@@ -3,6 +3,7 @@
 namespace WpDbTools\Db;
 
 use WpDbTools\Exception\Db\WpDbExecuteException;
+use WpDbTools\Exception\RuntimeException;
 use WpDbTools\Type\GenericResult;
 use WpDbTools\Type\Result;
 use WpDbTools\Type\Statement;
@@ -179,4 +180,16 @@ class WpDbAdapter implements Database {
 		return "`{$identifier}`";
 	}
 
+	/**
+	 * @throws RuntimeException
+	 * @return WpDbAdapter
+	 */
+	public static function from_globals() {
+
+		if ( empty( $GLOBALS[ 'wpdb' ] ) || ! $GLOBALS[ 'wpdb' ] instanceof wpdb ) {
+			throw new RuntimeException( "Global \$wpdb not type of wpdb" );
+		}
+
+		return new self( $GLOBALS[ 'wpdb' ] );
+	}
 }
