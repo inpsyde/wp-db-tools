@@ -6,6 +6,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 …
 
+## [0.1.1]
+
+### Removed
+* Removed (unused) dependency `inpsyde/wp-prepared-statments-converter`
+
 ## [0.1.0]
 
 ### Changed
@@ -24,5 +29,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * WpDbAdapter
 
 
-[Unreleased]: https://github.com/inpsyde/wp-db-tools/compare/0.1.0...master
+[Unreleased]: https://github.com/inpsyde/wp-db-tools/compare/0.1.1...master
+[0.1.1]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.1.1
 [0.1.0]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.1.0
