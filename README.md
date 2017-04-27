@@ -170,3 +170,17 @@ Prepare WordPress system tests: Copy `phpunit-system.xml.dist` to `phpunit-syste
 ```
 $ tests/bin/phpunit -c phpunit-system.xml
 ```
+
+## Crafted by Inpsyde
+
+The team at [Inpsyde](http://inpsyde.com) is engineering the Web since 2006.
+
+## License
+
+Copyright (c) 2017 Inpsyde GmbH
+
+Good news, this plugin is free for everyone! Since it's released under the [MIT License](LICENSE) you can use it free of charge on your personal or commercial website.
+
+## Contributing
+
+All feedback / bug reports / pull requests are welcome.
