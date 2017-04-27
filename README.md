@@ -149,3 +149,25 @@ if ( ! $lookup->table_exists( 'wp_posts_copy' ) )
  * Specify a bit-mask schema to unify options like `ARRAY_A` independent for the used DB adapter
  * API to identify and handle schema updates (schema-delta)
  * Translate WP style prepared statements syntax in PDO prepared statment syntax and vice versa
+
+## Run tests
+
+Install phpunit locally via [phive](https://phar.io/):
+
+```
+$ phive install
+```
+
+Alternatively install phpunit version `^5.7` (`^6.0` is only supported by the unit tests right now, not by the WordPress system tests).
+
+Run unit tests:
+
+```
+$ tests/bin/phpunit
+```
+
+Prepare WordPress system tests: Copy `phpunit-system.xml.dist` to `phpunit-system.xml` and insert your DB credentials. Then run
+
+```
+$ tests/bin/phpunit -c phpunit-system.xml
+```
