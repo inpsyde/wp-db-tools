@@ -3,10 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [Unreleased]
 …
 
-## 0.1.0
+## [0.1.0]
 
 ### Changed
 * Merged package `inpsyde/wp-db-types` in
@@ -22,3 +22,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Table copier
 * Table lookup
 * WpDbAdapter
+
+
+[Unreleased]: https://github.com/inpsyde/wp-db-tools/compare/0.1.0...master
+[0.1.0]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.1.0
