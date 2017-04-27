@@ -54,7 +54,7 @@ class GenericResultTest extends BrainMonkeyWpTestCase {
 	 */
 	public function test_array_access_write_exception() {
 
-		$this->setExpectedException( 'LogicException' );
+		$this->expectException( 'LogicException' );
 
 		$testee = new GenericResult( [] );
 		$testee[ 'set' ] = 'value';
@@ -65,7 +65,7 @@ class GenericResultTest extends BrainMonkeyWpTestCase {
 	 */
 	public function test_array_access_unset_exception() {
 
-		$this->setExpectedException( 'LogicException' );
+		$this->expectException( 'LogicException' );
 
 		$testee = new GenericResult( [ 'test' => 'value' ] );
 		unset( $testee[ 'test' ] );
