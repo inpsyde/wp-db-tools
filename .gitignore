@@ -1,5 +1,5 @@
 /vendor/*
 /tests/bin/*
 phpunit.xml
-phpunit-integration.xml
+phpunit-system.xml
 composer.lock
