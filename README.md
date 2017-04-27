@@ -1,9 +1,9 @@
 # WP DB tools
 
-Solving repetitive tasks like _creating_, _deleting_, _copying_ MySQL tables. Providing adapter 
-for `wpdb` as well as `PDO`.
+API for manging ()_creating_, _deleting_, _copying_) MySQL tables. Providing adapter 
+for `wpdb` (and planed also for`PDO`).
 
-**Work in progress!** You should only use discrete releases (0.1.0,…) and follow the CHANGELOG.md. Braking changes are likely within pre-release versions (0.2.0, 0.3.0,…). Use the tilde operator in your composer version constraint: `~0.1.0`.
+**Work in progress!** You should only use discrete releases (0.1.0,…) and follow the CHANGELOG.md. Braking changes are likely within pre-release versions (0.2.0, 0.3.0,…). Use the tilde operator in your composer version constraint: `~0.1.0` to fetch only releases on «bug fix» level.
 
 ## Install
 
@@ -147,4 +147,5 @@ if ( ! $lookup->table_exists( 'wp_posts_copy' ) )
 ## Roadmap
 
  * Specify a bit-mask schema to unify options like `ARRAY_A` independent for the used DB adapter
+ * API to identify and handle schema updates (schema-delta)
  * Translate WP style prepared statements syntax in PDO prepared statment syntax and vice versa
