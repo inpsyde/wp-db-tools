@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+…
+
+## [0.2.1]
 
 ### Fixed
 * Fix integration of `MySqlTableCreator` with `TableSchema` with messed up array keys
@@ -36,7 +39,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * WpDbAdapter
 
 
-[Unreleased]: https://github.com/inpsyde/wp-db-tools/compare/0.2.0...master
+[Unreleased]: https://github.com/inpsyde/wp-db-tools/compare/0.2.1...master
+[0.2.1]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.2.1
 [0.2.0]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.2.0
 [0.1.1]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.1.1
 [0.1.0]: https://github.com/inpsyde/wp-db-tools/releases/tag/0.1.0
