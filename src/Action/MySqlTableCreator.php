@@ -64,7 +64,7 @@ SQL;
 
 		$columns = $schema->schema();
 		array_walk( $columns, function( &$col ) {
-			$col = $this->database->quote_identifier( $col[ 'name' ] ) . ' ' . $col[ 'definition' ];
+			$col = $this->database->quote_identifier( $col[ 'name' ] ) . ' ' . $col[ 'description' ];
 		} );
 
 		return implode( ",\n\t", $columns );
@@ -100,7 +100,7 @@ SQL;
 		$indices = $schema->indices();
 		array_walk( $indices, function( $index, $id ) use ( $schema, &$definitions ) {
 			$name = $this->database->quote_identifier( $index[ 'name' ] );
-			$definition = $this->mb_replace( '%%', $name, $index[ 'definition' ] );
+			$definition = $this->mb_replace( '%%', $name, $index[ 'description' ] );
 			$definition = $this->substitute_column_placeholders( $definition, $schema );
 			$definitions[] = $definition;
 		} );

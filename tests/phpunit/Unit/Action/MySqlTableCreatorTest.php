@@ -67,7 +67,7 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id' => [
 							'name' => 'id',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 					],
 					'primary_key' => [],
@@ -82,7 +82,7 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id' => [
 							'name' => 'id',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 					],
 					'primary_key' => [],
@@ -97,7 +97,7 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id' => [
 							'name' => 'id',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 					],
 					'primary_key' => [],
@@ -112,7 +112,7 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id' => [
 							'name' => 'id',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 					],
 					'primary_key' => [],
@@ -127,15 +127,15 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id' => [
 							'name' => 'id',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 						'title' => [
 							'name' => 'title',
-							'definition' => 'VARCHAR(255)',
+							'description' => 'VARCHAR(255)',
 						],
 						'text' => [
 							'name' => 'text',
-							'definition' => 'TEXT',
+							'description' => 'TEXT',
 						],
 					],
 					'primary_key' => [ 'id' ],
@@ -154,15 +154,15 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id_key' => [
 							'name' => 'id_column_name',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 						'title_key' => [
 							'name' => 'title_column_name',
-							'definition' => 'VARCHAR(255)',
+							'description' => 'VARCHAR(255)',
 						],
 						'text' => [
 							'name' => 'text',
-							'definition' => 'TEXT',
+							'description' => 'TEXT',
 						],
 					],
 					'primary_key' => [ 'id_key', 'title_key' ],
@@ -181,22 +181,22 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id_key' => [
 							'name' => 'id_column_name',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 						'title_key' => [
 							'name' => 'title_column_name',
-							'definition' => 'VARCHAR(255)',
+							'description' => 'VARCHAR(255)',
 						],
 						'text' => [
 							'name' => 'text',
-							'definition' => 'TEXT',
+							'description' => 'TEXT',
 						],
 					],
 					'primary_key' => [ 'id_key' ],
 					'indices' => [
 						'id_title' => [
 							'name' => 'id_title_key_name',
-							'definition' => 'KEY %% (%id_key%, %title_key%)'
+							'description' => 'KEY %% (%id_key%, %title_key%)'
 						]
 					],
 				],
@@ -214,26 +214,26 @@ class MySqlTableCreatorTest extends BrainMonkeyWpTestCase {
 					'schema' => [
 						'id_key' => [
 							'name' => 'id_column_name',
-							'definition' => 'BIGINT NOT NULL AUTO_INCREMENT',
+							'description' => 'BIGINT NOT NULL AUTO_INCREMENT',
 						],
 						'title_key' => [
 							'name' => 'title_column_name',
-							'definition' => 'VARCHAR(255)',
+							'description' => 'VARCHAR(255)',
 						],
 						'slug' => [
 							'name' => 'slug',
-							'definition' => 'VARCHAR(255) NOT NULL',
+							'description' => 'VARCHAR(255) NOT NULL',
 						],
 					],
 					'primary_key' => [ 'id_key' ],
 					'indices' => [
 						'id_title' => [
 							'name' => 'id_title_key_name',
-							'definition' => 'KEY %% (%id_key%, %title_key%)'
+							'description' => 'KEY %% (%id_key%, %title_key%)'
 						],
 						'slug_unique' => [
 							'name' => 'slug',
-							'definition' => 'UNIQUE %% (%slug%)'
+							'description' => 'UNIQUE %% (%slug%)'
 						]
 					],
 				],
