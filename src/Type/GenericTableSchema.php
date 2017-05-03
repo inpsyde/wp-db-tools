@@ -12,6 +12,7 @@ use WpDbTools\Exception\Type\InvalidTableSchema;
 final class GenericTableSchema implements TableSchema {
 
 	const TABLE_NAME_INDEX = 'name';
+	const TABLE_BASE_NAME_INDEX = 'base_name';
 	const TABLE_SCHEMA_INDEX = 'schema';
 	const TABLE_PRIMARY_KEY_INDEX = 'primary_key';
 	const TABLE_INDICES_INDEX = 'indices';
@@ -35,6 +36,11 @@ final class GenericTableSchema implements TableSchema {
 	 * @var string
 	 */
 	private $name;
+
+	/**
+	 * @var string
+	 */
+	private $base_name;
 
 	/**
 	 * @param array $definition
@@ -61,6 +67,16 @@ final class GenericTableSchema implements TableSchema {
 	public function __toString() {
 
 		return $this->name;
+	}
+
+	/**
+	 * Table name without any prefix
+	 *
+	 * @return string
+	 */
+	public function base_name() {
+
+		return $this->base_name;
 	}
 
 	/**
@@ -102,6 +118,15 @@ final class GenericTableSchema implements TableSchema {
 			throw new InvalidTableSchema( "Parameter 'name' must be of type string" );
 		}
 		$this->name = $definition[ self::TABLE_NAME_INDEX ];
+
+		if ( array_key_exists( self::TABLE_BASE_NAME_INDEX, $definition ) ) {
+			if ( ! is_string( $definition[ self::TABLE_BASE_NAME_INDEX ] ) ) {
+				throw new InvalidTableSchema( "Parameter 'base_name' must be of type string" );
+			}
+			$this->base_name = $definition[ self::TABLE_BASE_NAME_INDEX ];
+		} else {
+			$this->base_name = $this->name;
+		}
 
 		return $this;
 	}

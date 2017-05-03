@@ -36,6 +36,7 @@ class TableSchemaFactory {
 		$definition = Yaml::parse( $yaml )[ 'table' ];
 
 		if ( array_key_exists( 'prefix', $definition ) ) {
+			$definition[ 'base_name' ] = $definition[ 'name' ];
 			$definition[ 'name' ] = $this->apply_prefix( $definition[ 'prefix' ], $definition[ 'name' ] );
 			unset( $definition[ 'prefix' ] );
 		}

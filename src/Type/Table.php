@@ -10,6 +10,8 @@ namespace WpDbTools\Type;
 interface Table {
 
 	/**
+	 * Complete table name (including any prefix)
+	 *
 	 * @return string
 	 */
 	public function name();

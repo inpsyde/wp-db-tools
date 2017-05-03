@@ -10,6 +10,13 @@ namespace WpDbTools\Type;
 interface TableSchema extends Table {
 
 	/**
+	 * Table name without any prefix
+	 *
+	 * @return string
+	 */
+	public function base_name();
+
+	/**
 	 * Returns a list of [ id => [ name => <column_name>, description => <column_description> ], ... ]
 	 *
 	 * @return array[]

@@ -28,6 +28,10 @@ class TableSchemaFactoryTest extends BrainMonkeyWpTestCase {
 			$schema->name()
 		);
 		$this->assertSame(
+			$expected_schema[ 'base_name' ],
+			$schema->base_name()
+		);
+		$this->assertSame(
 			$expected_schema[ 'schema' ],
 			$schema->schema()
 		);
@@ -75,6 +79,7 @@ YAML;
 			$yaml,
 			[
 				'name' => self::NETWORK_PREFIX . 'test_table',
+				'base_name' => 'test_table',
 				'schema' => [
 					'id' => [
 						'name' => 'id',
@@ -113,6 +118,7 @@ YAML;
 			$yaml,
 			[
 				'name' => self::SITE_PREFIX . 'test_table',
+				'base_name' => 'test_table',
 				'schema' => [
 					'id' => [
 						'name' => 'id',
@@ -138,6 +144,7 @@ YAML;
 			$yaml,
 			[
 				'name' => 'test_table',
+				'base_name' => 'test_table',
 				'schema' => [
 					'id' => [
 						'name' => 'id',

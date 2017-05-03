@@ -28,6 +28,46 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 		);
 	}
 
+	public function test_base_name() {
+
+		$definition = [
+			'name' => 'my_table',
+			'schema' => [
+				'id' => [
+					'name' => 'id',
+					'description' => "BIGINT(20)",
+				],
+			],
+		];
+
+		$testee = new GenericTableSchema( $definition );
+
+		$this->assertSame(
+			$definition[ 'name' ],
+			$testee->base_name()
+		);
+	}
+
+	public function test_base_name_implicit() {
+
+		$definition = [
+			'name' => 'my_table',
+			'schema' => [
+				'id' => [
+					'name' => 'id',
+					'description' => "BIGINT(20)",
+				],
+			],
+		];
+
+		$testee = new GenericTableSchema( $definition );
+
+		$this->assertSame(
+			$definition[ 'name' ],
+			$testee->base_name()
+		);
+	}
+
 	public function test_schema() {
 
 		$definition = [
@@ -129,6 +169,18 @@ class GenericTableSchemaTest extends BrainMonkeyWpTestCase {
 			'name_is_not_string' => [
 				[
 					'name' => 3.15159,
+					'schema' => [
+						'id' => [
+							'name' => 'id',
+							'description' => 'BIGINT(20)',
+						],
+					],
+				],
+			],
+			'base_name_is_not_string' => [
+				[
+					'name' => 'id',
+					'base_name' => 3.15159,
 					'schema' => [
 						'id' => [
 							'name' => 'id',
