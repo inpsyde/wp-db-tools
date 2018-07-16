@@ -7,7 +7,7 @@ API for manging (_creating_, _deleting_, _copying_) MySQL tables. Providing adap
 ## Install
 
 ```
-compser require inpsyde/wp-db-tools:~0.1.0
+composer require inpsyde/wp-db-tools:~0.1.0
 ```
 
 ## Usage examples
